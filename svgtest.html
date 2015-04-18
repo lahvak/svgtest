@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SVG Groups Test</title> 
+    </head>
+    <body>
+    <h1>hjjhkjhjkhlk</h1>
+
+    <form>
+        <input id = "button", type = "button", value = "show", onclick =
+        "setDisplay('inherit')">
+        <input id = "button", type = "button", value = "hide", onclick =
+        "setDisplay('none')">
+    </form>
+
+        <object data="svgtest.svg" type="image/svg+xml" id="mysvg" width="50%" height="50%"></object>
+    <script>
+        var a = document.getElementById("mysvg");
+
+        //it's important to add an load event listener to the object, as it will load the svg doc asynchronously
+        a.addEventListener("load",function(){
+            var svgDoc = a.contentDocument; //get the inner DOM of alpha.svg
+            var delta = svgDoc.getElementById("blah"); //get the inner element by id
+            delta.setAttribute("display","none");
+        },false);
+
+        function setDisplay(val){
+            var svgDoc = a.contentDocument; //get the inner DOM of alpha.svg
+            var delta = svgDoc.getElementById("blah"); //get the inner element by id
+            delta.setAttribute("display",val);
+        }
+    </script>
+
+    </body>
+</html>

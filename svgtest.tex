@@ -1,0 +1,17 @@
+\documentclass[]{standalone}
+\usepackage[]{tikz}
+
+\newenvironment{svggroup}[1]
+    {\special{dvisvgm:raw <g id="#1">}}
+    {\special{dvisvgm:raw </g>}}
+
+\begin{document}
+\begin{tikzpicture}
+   \draw[thick] (0,0) -- (2,2); 
+   \node[color=blue] at (1,1) {$x^2 - 2x + 1$};
+   \begin{svggroup}{blah}
+       \draw[red] (0,0) rectangle (2,2);
+       \node[color=green] at (1,.2) {$x^2 - 2x + 1$};
+   \end{svggroup}
+\end{tikzpicture}
+\end{document}
