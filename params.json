@@ -1,0 +1,1 @@
+{"name":"Svgtest","tagline":"Experiment with svg groups and pgf/tikz","body":"Experiment with use of pgf/tikz to create svg files with groups that can be\r\nmanipulated with javascript.\r\n\r\n[Here](svgtest.html).","google":"","note":"Don't delete this file! It's used internally to help with page regeneration."}
